@@ -1,0 +1,215 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /*Con questo tag facciamo si che il box model (degli elementi) non sia solo dal contenuto ma comprenda anche il padding e il bordo*/
+}
+
+/*------------------- Stili per mobile -----------------------------*/
+body{
+    color:white;
+    background-color: #df1010;
+}
+
+main{
+    padding: 1rem;
+}
+
+/*------------------------- Stili per tablet ---------------------*/
+
+@media screen and(min-width: 768px){
+    body{
+        background-color: #2828af;
+    }
+    main{
+        max-width: 80%;
+        margin : 0 auto;
+    }
+}
+
+
+/*--------------------- Stili per Desktop --------------------*/
+@media screen and (min-width: 1200px){
+    body{
+        background-color: white;
+    }
+    main{
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #535353;
+
+}
+
+img {
+    border-radius: 1rem;
+    max-width: 100%;
+    height: auto;
+}
+
+header{
+    margin-top: 2rem;
+}
+
+.logo {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+
+
+.social-icons {
+    display: flex;
+    position: absolute;
+    right: 3rem; /* allineate a destra rispetto al logo */
+    
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background-color: rgb(23, 23, 109);
+    color: #ffffff;
+    border-radius: 50%;
+    
+}
+
+.social-icons img.instagram {
+    border-radius: 0;
+    width: 1rem;
+    height: 1rem;
+}
+.social-icons img.facebook {
+    border-radius: 0;
+    width: .6rem;
+    height: 1rem;
+}
+.social-icons img.youtube {
+    border-radius: 0;
+    width: 1rem;
+    height: 0.8rem;
+}
+
+.logo img {
+    max-width: 7rem;
+}
+
+.navbar {
+    display: flex;
+    max-height: 3rem;
+    background-color: rgb(9, 9, 70);
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    color: white;
+
+    width: 100%;
+
+}
+
+.affianca {
+    display: flex;
+    margin-top: 1rem;
+    gap: .5rem;
+    width: 100%;
+    max-height: 200vh;
+    margin-bottom: 1rem;
+
+}
+
+.hero .container {
+    z-index: 1;
+    text-align: center;
+}
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    min-height: 80vh;
+    width: 60%;
+    background-image: url(../img/keyboards-1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.evidenza {
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.articolo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.gallery {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.gallery-items {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.gallery-items:last-child{
+    margin-bottom: 1rem;
+}
+
+.gallery-items img,
+.gallery-items .container {
+    width: 50%;
+}
+
+
+.gallery-items.dispari img {
+    order: 1;
+}
+
+footer {
+    display: flex;
+    background-color: yellow;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    height: 3rem;
+}

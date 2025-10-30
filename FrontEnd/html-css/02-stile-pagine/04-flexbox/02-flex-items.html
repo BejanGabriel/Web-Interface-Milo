@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS - CSS 04 - Flex container</title>
+
+    <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="css/flex-items.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Flexbox</h1>
+
+        <h2>Flex items</h2>
+
+        <p>
+            Una volta che abbiamo creato un container flex e gli abbiamo assegnato tutte le proprietà che ci servono per ottenere il layout desiderato, possiamo agire sui figli, quindi sui flex items, tramite altre proprietà CSS dedicate.
+        </p>
+
+        <h3>Order</h3>
+        <p>
+            Serve a controllare l'ordine in cui gli elementi flex vengono visualizzati all'interno di un contenitore flex. Questa proprietà è utile quando vogliamo modificare l'ordine degli elementi senza cambiare la loro posizione nel markup HTML.
+        </p>
+
+        <div class="flex-container order">
+            <div class="box flex-item one">1</div>
+            <div class="box flex-item two">2</div>
+            <div class="box flex-item three">3</div>
+        </div>
+
+        <h3>flex-grow</h3>
+
+        <p>
+            Questa proprietà ci permette di far espandere gli elementi di un container flex per tutto lo spazio disponibile e di determinare quanto ogni singolo elemento debba crescere rispetto agli altri fratelli. <strong>(DEFAULT = 0)</strong>
+        </p>
+
+         <div class="flex-container grow">
+            <div class="box flex-item one">1</div>
+            <div class="box flex-item two">2</div>
+            <div class="box flex-item three">3</div>
+        </div>
+
+        <h3>Flex-shrink</h3>
+        
+        <p>
+            Al contrario di grow, definisce quanto un elemento flex debba ridursi rispetto agli altri fratelli/elementi. Più grande il valore, più l'elemento viene ridotto. <strong>(DEFAULT = 1)</strong>
+        </p>
+
+          <div class="flex-container shrink">
+            <div class="box flex-item one">1</div>
+            <div class="box flex-item two">2</div>
+            <div class="box flex-item three">3</div>
+        </div>
+
+        <h3>Flex-basis</h3>
+
+        <p>
+            Definisce la dimensione iniziale di un elemento flex prima che lo spazio disponibile venga distribuito secondo le proprietà <strong>[flex-grow]</strong> e <strong>[flex-shrink]</strong>. In altre parole, flex-basis determina la dimensione di un elemento lungo l'asse principale del contenitore flex.
+        </p>
+
+        <div class="flex-container basis">
+            <div class="box flex-item one">1</div>
+            <div class="box flex-item two">2</div>
+            <div class="box flex-item three">3</div>
+        </div>
+        
+    <h3>Align-self</h3>
+
+    <p>
+        Consente di specificare l'allineamento di un singolo elemento all'interno di un contenitore flex lungo l'asse trasversale. Questa proprietà sovrascrive il valore di align-items impostato sul contenitore, permettendo un controllo più fine sull'allineamento degli elementi.
+    </p>
+    
+     <div class="flex-container align-self">
+            <div class="box flex-item one">1</div>
+            <div class="box flex-item two">2</div>
+            <div class="box flex-item three">3</div>
+            <div class="box flex-item four">4</div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

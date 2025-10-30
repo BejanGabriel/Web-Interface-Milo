@@ -1,0 +1,103 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    color: #171c2a;
+}
+
+
+.container {
+    max-width: 990px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+h1 {
+    color: #4e3969;
+    font-size: 2.88rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 1.625rem;
+    font-weight: 500;
+    letter-spacing: .29px;
+    margin-bottom: 1.5rem;
+}
+
+img {
+    display: block;
+    min-width: 100%;
+}
+
+.img-header {
+    border-radius: 1rem;
+}
+
+.info-ricetta {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    list-style: none;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(33, 37, 41, 0.35);
+}
+
+.intro-ricetta {
+    margin: 2rem 0;
+}
+
+.ingredienti {
+    width: 60%;
+    margin: 3rem 0;
+    padding: 1.5rem;
+    background-color: #fde9c0;
+    border-radius: 1rem;
+}
+
+.lista-ingredienti {
+    list-style: circle;
+    padding-left: 20px;
+    column-count: 2;
+    margin-bottom: 1.5rem;
+}
+
+.ingredienti-crema {
+    list-style: circle;
+    padding-left: 20px;
+    column-count: 2;
+}
+
+.lista-ingredienti li,
+.ingredienti-crema li {
+    margin-bottom: .5rem;
+}
+
+.ingredienti h3 {
+    font-size: .875rem;
+    letter-spacing: 1px;
+    color: #978fa1;
+    margin-bottom: .5rem;
+}
+
+.preparazione img {
+    margin: 1rem 0;
+}
+
+.rif {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background-color: rgba(247, 150, 46, .3);
+    color: #e28015;
+    font-size: .813rem;
+    font-weight: 600;
+    padding: 0 3px;
+}
+
+.preparazione, .conservazione {
+    margin-bottom: 3rem;
+}

@@ -1,0 +1,33 @@
+h1{
+    /* colora H1 */
+    color: orange;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: slategray;
+    text-align: center;
+    font-size: 60px ;
+}
+
+p{
+    color: 535353;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+    margin: 20px;
+}
+
+ul{
+    /* bordo attorno all'elemento */
+    border-width: 4px;
+    border-color: crimson;
+    border-style: solid;
+
+    color: 535353;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+}
+
+li{
+    list-style: none;
+    text-shadow: 2px 2px lightblue;
+}

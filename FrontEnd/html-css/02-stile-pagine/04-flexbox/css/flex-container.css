@@ -1,0 +1,92 @@
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.flex-container{
+    display: flex;
+    background-color: #d1d1d1;
+    border: 2px dashed #545454;
+}
+
+.flex-item{
+    height: 100px;
+    min-width: 100px;
+
+}
+
+.one{
+    background-color: #fa8072;    
+}
+
+.two{
+    background-color: #72b4fa;
+}
+
+.three{
+    background-color: #72fa96;
+}
+.four{
+    background-color: #effa72;
+}
+
+.flex-container.direction{
+    /* flex-direction: row; */
+
+    /* flex-direction: row-reverse; */
+
+    flex-direction: column;
+
+    /* flex-direction: column-reverse; */
+
+}
+
+.flex-container.wrap{
+    gap: .5rem;
+    /* flex-wrap: nowrap; */
+    flex-wrap: wrap;
+    /* flex-wrap: wrap-reverse; */
+
+}
+
+.flex-container.justify{
+    /* justify-content: flex-start;  DEFAULT*/
+    /* justify-content: flex-end;  allinea al fondo dell'asse principale */
+    /* justify-content: center;  Centra perfettamente i contenuti sull'asse principale. */
+    /* justify-content: space-between;  distribuisce gli spazi tra gli elementi */
+    /* justify-content: space-around;   */
+    justify-content: space-evenly;  /*distribuisce gli spazi tra gli elementi in modo omogeneo*/
+}
+
+.flex-container.align{
+    min-height: 350px;
+    gap: 0.5rem;
+    align-items: stretch;/*Di base gli elementi di flex hanno questo attributo che ne determina la dimensione*/
+    /* per allinearli all'inizio del contenitore */
+    align-items: flex-start;
+    /* per allinearli alla fine del contenitore */
+    align-items: flex-end;
+    /* per allinearli al centro dell'asse trasversale */
+    align-items: center;
+    /* per allinearli rispetto al contenuto */
+    /* align-items: baseline; */
+}
+.flex-container.align .flex-item{
+    height: auto;
+}
+
+.flex-container.align .one{
+    min-height: 150px;
+}
+
+.flex-container.align .two{
+    min-height: 300px;
+}
+.flex-container.align .three{
+    min-height: 80px;
+}
+.flex-container.align .four{
+    min-height: 200px;
+}

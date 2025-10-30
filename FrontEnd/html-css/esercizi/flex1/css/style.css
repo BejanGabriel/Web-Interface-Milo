@@ -1,0 +1,173 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;/*Con questo tag facciamo si che il box model (degli elementi) non sia solo dal contenuto ma comprenda anche il padding e il bordo*/
+}
+body{
+    font-family: "Poppins", sans-serif;
+    color: #535353;
+}
+h1, h2, h3, h4{
+    margin-bottom: 1rem;
+}
+
+p{
+    margin-bottom: 1rem;
+}
+
+
+
+.navbar{
+    display: flex; /*Ricorda che con il tag flex, si va (in assenza di ulteriore specificazione) a lavorare sull'asse orizontale*/
+
+    justify-content: space-between;
+
+    align-items: center; /*Se si vuole lavorare sull'asse verticale, bisogna usare align*/
+
+    padding: .5rem 1rem;
+    border-bottom: 1px solid #c4b0b0;
+}
+
+.logo a{
+    color: #535353;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+.menu{
+    display: flex;
+    list-style-type: none;
+    gap: 1rem; /*spazio tra gli elementi*/
+}
+
+.menu a{
+    text-decoration: none;
+}
+
+.container{
+    max-width: 990px;
+    margin: 0 auto;
+    padding-left: 1rem;/*Mobile Friendly*/
+    padding-right: 1rem;
+}
+
+.hero .container{
+    z-index: 1;
+}
+
+.hero{
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+    min-height: 50vh;
+    background-image: url(../img/heroImage.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/*PSEUDO ELEMENTI= 
+After = dopo elemento
+Before = prima dell'elemento*/
+.hero::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    min-height: 50vh;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero h1{
+    font-size: 4rem;
+}
+
+.button{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background-color: #0d6efd;
+    padding: .5rem 1rem;
+    border: 1px solid #0d6efd;
+    border-radius: .5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.button:hover{
+    /*Dare regole di stile a tutti i button quando l'utente ci passa con i cursore*/
+    cursor: pointer;
+    background-color: #199715;
+    border: 1px solid black;
+    /*Qui funziona secondo il principio di java, una classe che viene sovrascritta da un'altra se stessa.
+    in questo caso, hover sta sovrascrivendo le variabili della classe padre, button*/
+}
+
+.ultimi-post{
+    padding: 4rem 0;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.articolo{
+display: flex;
+gap: 1.5rem;
+align-items: center;
+margin-bottom: 2rem;
+}
+
+/*PSEUDO CLASSE, ma funziona solo se non c'è più alcun elemento dopo articolo*/
+.articolo:last-child{
+    margin-bottom: 0;
+}
+
+.articolo img,
+.articolo div{
+    width: 50%;
+}
+
+.articolo img{
+    border-radius: 1rem;
+}
+
+.articolo.pari img{
+    order: 1;
+}
+
+/*Questo '>' indica i FIGLI della mia section*/
+section > h2,
+section .container > h2{
+    text-align: center;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.gallery-item{
+    /*[(100/colonne - gap) + (gap / colonne)]*/
+    width: calc((25% - 1rem) + (1rem / 4));
+}
+
+.gallery-item img{
+    display: block;
+}
+
+footer{
+    display: flex;
+    color: white;
+    padding: 1.5rem 1rem;
+    justify-content: space-between;
+    background-color: #0d6efd;
+}
+footer p{
+    margin-bottom: 0;
+}

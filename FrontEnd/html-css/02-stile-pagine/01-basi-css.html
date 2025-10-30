@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS - Stile pagine 01 - Basi CSS</title>
+
+    <!-- Aggiungo del CSS utilizzando il tag STYLE direttamente nell'HTML -->
+    <!-- <style>
+        h1 {
+            color: orange;
+        }
+
+        p {
+            color: slategray;
+        }
+    </style> -->
+
+    <!-- <link rel="stylesheet" href="../css/general.css"> -->
+    <!-- Collego a questa pagina HTML un foglio di stile esterno da cui prendere tutte le regole CSS -->
+    <link rel="stylesheet" href="css/01-basi-css.css">
+</head>
+
+<body>
+
+    <!--
+        Se l'HTML serve a creare la struttura di una pagina web, il CSS si occupa di renderla presentabile.
+        Per farlo utilizziamo un foglio di stile (style sheet), ovvero un documento che contiene una lista di regole CSS che assegnano uno stile ai nostri elementi HTML.
+
+        Un set di regole CSS ha questo aspetto:
+
+        div {
+            color: red;
+            margin: 20px;
+        }
+
+        li {
+            font-weight: bold;
+        }
+
+        Ogni set è composto da:
+            - Selettore -> permette di definire quali elementi devono essere stilizzati (es.: div o li).
+            - Parentesi graffe -> contengono tutte le regole di stile che gli elementi selezionati devono avere.
+            - Dichiarazione -> è una coppia chiave/valore che definisce come debba essere stilizzato l'elemento selezionato. Composta da:
+                - Proprietà: rappresenta l'aspetto che si desidera modificare
+                - Valore: indica come deve essere modificata la proprietà. I valori possono essere colori, dimensioni, unità di misura, ecc.
+            Una dichiarazione termina sempre con un punto e virgola.
+        
+        Ci sono 3 modi per aggiungere dello stile al nostro documento HTML:
+            - Con un tag STYLE direttamente nell'HTML (sconsigliato)
+            - Con un foglio di stile separato
+            - Direttamente sull'elemento interessato con la proprietà style (sconsigliato)
+    -->
+
+    <div class="wrapper">
+
+        <h1>Basi CSS</h1>
+
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo praesentium laudantium esse ipsam debitis eligendi, soluta autem quaerat! Vitae voluptate aspernatur ex vel tenetur vero repudiandae debitis voluptatem ducimus deleniti repellat, alias fugiat, odit error iusto natus a magnam aperiam, minima nam. Aliquid eligendi doloribus eveniet repudiandae explicabo ratione amet.
+        </p>
+
+        <div>
+            <h2>Heading 2</h2>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti modi odit nam nemo architecto maxime optio! Exercitationem facilis, vero error commodi beatae adipisci veritatis, laboriosam deserunt officiis nulla delectus doloribus ex ipsam sequi quaerat iure reprehenderit sit et at cumque voluptatum tempore porro. Ipsam quidem quae cum a explicabo tempora!
+            </p>
+
+            <ul>
+                <li>Link</li>
+                <li>Zelda</li>
+                <li>Ganondorf</li>
+            </ul>
+        </div>
+
+        <h2>Elementi inline</h2>
+
+        <span>span tag</span>
+        <em>em tag</em>
+        <a href="#!">anchor tag</a>
+        <span>span tag</span>
+
+        <h2>Elementi block</h2>
+
+        <div>div tag</div>
+        <div>altro div tag</div>
+        <h3>h3 tag</h3>
+        <p>paragraph tag</p>
+        <ul>
+            <li>li tag</li>
+            <li>li tag</li>
+        </ul>
+
+    </div>
+
+</body>
+
+</html>

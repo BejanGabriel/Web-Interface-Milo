@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS - CSS 04 - Flex container</title>
+
+    <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="css/flex-container.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Flexbox</h1>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas beatae laborum natus! Id minus neque repellat vitae iusto ipsam rerum fugit in, accusamus earum! Ad animi perferendis ipsa qui mollitia.
+        </p>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas beatae laborum natus! Id minus neque repellat vitae iusto ipsam rerum fugit in, accusamus earum! Ad animi perferendis ipsa qui mollitia.
+        </p>
+
+        <h2>Flex Container</h2>
+
+        <p>
+            Per usare Flexbox, come prima cosa bisogna creare un contenitore che abbia <em><strong>display: flex;</strong></em> cosi che ogni discendente diventi un elemento flex. A quel punto possiamo controllare il comportamento degli elementi flex utilizzando diverse proprietà CSS appartenenti a Flex che si applicano agli elmementi stessi o al container.
+        </p>
+
+        <h3>Esempio</h3>
+
+        <div class="flex-container">
+            <div class="box flex-item one">1</div>
+            <div class="box flex-item two">2</div>
+            <div class="box flex-item three">3</div>
+        </div>
+
+        <h2>Flex direction</h2>
+
+        <p>
+            All'interno di un contenitore flex, ci sono un asse principale e un asse trasversale. <br>
+            Questi possono essere determinati dalla priprietà <em>flex-direction</em>.
+        </p>
+
+        <p>
+            <strong>L'asse principale</strong> (main axis) è l'asse lungo il quale gli elementi flex sono disposti. Può essere orizontale (riga - row) o verticale (colonna - column). Gli elementi possono essere allineati lungo questo asse utilizzando la proprietà come <em><strong>justify-content</strong></em>.
+        </p>
+
+        <ul>
+            <li>Se flex-direction è impostato su <em><strong>row</strong></em> (default), l'asse principale è orizzontale (da sx verso dx)</li>
+            <li>Se flex-direction è impostato su <em><strong>column</strong></em>, l'asse principale è verticale (dall'alto verso il basso)</li>
+        </ul>
+
+        <p>
+            <strong>L'asse trasversale</strong> (off axis) è l'asse perpendicolare all'asse principale. Gli elementi possono essere allineati lungo questo asse utilizzando la proprietà come <em><strong>align-items</strong></em>.
+        </p>
+
+        <ul>
+            <li>Se l'asse principale è orizzontale (con flex-direction: row), l'asse trasversale è verticale</li>
+            <li>Se l'asse principale è orizzontale (con flex-direction: column), l'asse trasversale è orizzontale</li>
+        </ul>
+        <div class="flex-container direction">
+            <div class="box flex-item one">1</div>
+            <div class="box flex-item two">2</div>
+            <div class="box flex-item three">3</div>
+        </div>
+
+        <h3>flex-wrap</h3>
+
+        <p>
+            Questa proprietà controlla se gli elementi flex possono andare a capo quando non c'è spazio sufficente nel contenitore.
+        </p>
+
+        <p>
+            Valori:
+        </p>
+
+        <ul>
+            <li><strong>nowrap ()default:</strong> Gli elementi rimangono su una sola roga/colonna</li>
+            <li><strong>wrap:</strong>Glie elementi andranno a capo se necessario.</li>
+            <li><strong>wrap-reverse</strong> Gli elementi andranno a capo in ordine inverso.</li>
+    </ul>
+
+    <div class="flex-container wrap">
+            <div class="box flex-item one">1</div>
+            <div class="box flex-item two">2</div>
+            <div class="box flex-item three">3</div>
+            <div class="box flex-item one">4</div>
+            <div class="box flex-item two">5</div>
+            <div class="box flex-item three">6</div>
+        </div>
+
+        <h2>justify-content</h2>
+
+        <p>
+            Ci permette di allineare gli elementi lungo l'asse principale. Questa proprietà è particolarmente utile quando vogliamo distribuire lo spazio tra gli elementi o allinearli in modo specifico.
+        </p>
+
+          <div class="flex-container justify">
+            <div class="box flex-item one">1</div>
+            <div class="box flex-item two">2</div>
+            <div class="box flex-item three">3</div>
+        </div>
+
+        <h2>align-items</h2>
+        <p>
+            La utilizziamo per allineare gli elementi lungo l'asse trasversale.
+        </p>
+
+          <div class="flex-container align">
+            <div class="box flex-item one">1</div>
+            <div class="box flex-item two">2</div>
+            <div class="box flex-item three">3</div>
+            <div class="box flex-item four">4</div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

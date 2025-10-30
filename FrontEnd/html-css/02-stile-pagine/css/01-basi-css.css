@@ -1,0 +1,119 @@
+h1 {
+    /* colora il testo */
+    color: orange;
+
+    /* colora lo sfondo */
+    background-color: #708090;
+
+    /* determina la grandezza del font */
+    font-size: 60px;
+
+    /* assegna una decorazione al testo e ha dei valori prestabiliti come tante altre proprietà */
+    text-decoration: underline;
+
+    /* permette di scegliere la font family del testo */
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* permette di allineare il testo */
+    text-align: center;
+}
+
+p {
+    color: slategray;
+
+    /* determina lo spazio verticale tra le righe di un testo (interlinea) */
+    line-height: 30px;
+
+    /* determina lo spazio tra ogni singola lettera di un testo */
+    letter-spacing: 2px;
+
+    /* suddivide il contenuto in colonne */
+    column-count: 3;
+
+    /* imposta la quantità di spazio tra le colonne */
+    column-gap: 60px;
+}
+
+ul {
+    /* impostare un bordo attorno all'elemento */
+    /* border-width: 4px;
+    border-style: solid;
+    border-color: crimson; */
+
+    /* tutte queste proprietà possono essere abbreviate in un'unica proprietà (shorthand) */
+    /* border: 4px solid crimson; */
+
+    /* posso assegnare un bordo solo a un lato dell'elemento */
+    border-bottom: 4px solid crimson;
+    border-left: 6px dashed crimson;
+    border-right: 8px dotted crimson;
+}
+
+li {
+    /* per gestire l'aspetto dei puntini di ogni elemento della lista  */
+    list-style-type: none;
+
+    /* possiamo dare un'ombra al testo indicando 3 parametri: distanza orizzontale dell'ombra dal testo, distanza verticale dal testo e il colore dell'ombra */
+    /* text-shadow: 2px 2px lightgray; */
+    text-shadow: 2px 2px #e9e9e9;
+}
+
+/* --------------------------- COLORI - CODICI HEX -------------------------- */
+/*
+    Finora abbiamo usato delle parole chiave per assegnare determinati colori grazie a CSS, ma possiamo utilizzare i codici hex per essere più precisi e usare esattamente il colore che vogliamo, che magari non è disponibile tra quelli offerti da CSS.
+
+    I codici hex sono formati da un cancelletto e una stringa alfanumerica di 6 caratteri (es.: #42f4f1). Le 3 coppie di caratteri fanno riferimento ai 3 canali dei colori primari RGB (rosso, verde e blu), quindi i primi due caratteri gestiranno il rosso, quelli dopo il verde e gli ultimi il blu, risultando in un colore specifico.
+
+    Nero: #000000
+    Bianco: #FFFFFF
+
+    *VS Code color picker*
+*/
+
+/* -------------------- ELEMENTI BLOCK ED ELEMENTI INLINE ------------------- */
+/*
+    Abbiamo visto che l'HTML è composto da elementi diversi, alcuni di essi sono elementi block e altri sono elementi inline. La differenza sta nel come vengono visualizzati sulla pagina e quanto spazio occupano:
+    
+        - Elementi block = occupano l'intera larghezza disponibile, mandando "a capo" gli elementi che seguono, iniziano su una nuova riga e possono contenere altri elementi block e inline. Esempi: <p>, <div>, <h1>, <ul>, <li>.
+
+        - Elementi inline = occupano solo la larghezza necessaria per il loro contenuto e non iniziano su una nuova riga. Questi elementi vengono visualizzati uno accanto all'altro, a meno che non ci sia un'interruzione di riga. Possono contenere solo altri elementi inline. Esempi: <span>, <a>, <img>, <strong>, <em>.
+*/
+
+/* span {
+    display: block;
+} */
+
+/* div {
+	display: inline;
+} */
+
+/* ------------------------------ INLINE-BLOCK ------------------------------ */
+/* 
+    Gli elementi inline-block combinano caratteristiche sia degli elementi inline che degli elementi block.
+
+    Gli elementi inline-block si comportano come elementi inline, quindi possono essere posizionati uno accanto all'altro, ma possono avere larghezza e altezza definite. 
+    In più supportano correttamente le proprietà di margin e padding.
+    NON iniziano su una nuova riga, a meno che non ci sia spazio insufficienta nella riga corrente.
+*/
+
+/* ---------------------------- MARGIN E PADDING ---------------------------- */
+/*
+    Margin e padding controllano lo spazio attorno e all'interno degli elementi.
+
+    MARGIN
+    Il margin è lo spazio esterno di un elemento. Si tratta dell'area che separa un elemento dagli elementi circostanti. I margini non hanno colore e non influenzano le dimensioni dell'elemento stesso, invece, creano spazio attorno a esso.
+
+    PADDING
+    Il padding è lo spazio interno di un elemento. Si tratta dell'area che separa il contenuto dell'elemento (come testo o immagini) dai bordi dell'elemento stesso. A differenza del margin, il padding influisce sulle dimensioni complessive dell'elemento.
+*/
+
+div {
+    margin: 20px 16px;
+    /* margin-top: 20px;
+    margin-right: 16px;
+    margin-bottom: 20px;
+    margin-left: 16px; */
+
+    padding: 20px;
+    border: 1px solid #000;
+}

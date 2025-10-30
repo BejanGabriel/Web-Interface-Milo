@@ -1,0 +1,34 @@
+.wrapper{
+    width: 100%;
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+label{
+    display: block;
+    margin-bottom: .5rem;
+}
+input, select, textarea{
+    padding: .5rem .75rem;
+    border-radius: 0.65rem;
+    box-shadow: none;
+    margin-bottom: 1rem;
+}
+
+textarea{
+    display: block;
+}
+
+.chk{
+    margin-bottom: 1rem;
+}
+
+.chk label{
+display: inline;
+margin-bottom: 0;
+margin-left: none;
+}
+
+.chk input{
+    margin-bottom: 0;  
+}

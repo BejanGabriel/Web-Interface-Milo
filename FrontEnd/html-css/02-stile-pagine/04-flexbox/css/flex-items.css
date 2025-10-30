@@ -1,0 +1,54 @@
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.flex-container{
+    display: flex;
+    background-color: #d1d1d1;
+    border: 2px dashed #545454;
+}
+
+.flex-item{
+    height: 100px;
+    /*min-width: 100px;*/
+    flex-basis: 100px;
+}
+
+.one{
+    background-color: #fa8072;    
+}
+
+.two{
+    background-color: #72b4fa;
+}
+
+.three{
+    background-color: #72fa96;
+}
+.four{
+    background-color: #effa72;
+}
+
+.flex-container.order .two{
+    order: -1;/*Di default il valore order è ZERO*/
+} 
+.flex-container.grow .flex-item{
+    flex-grow: 1; /*Crescono per tutta la lunghezza disponibile, divendoselo tra di loro nel caso fossere più di 1*/
+} 
+
+.flex-container.grow .two{
+    flex-grow: 2;
+}
+
+.flex-container.align-self{
+    min-height: 350px;
+    align-items: flex-start;
+    gap: .5rem;
+}
+/*come suggerisce il nome, flex-self serve per un elemento in particolare, o una serie di elementi che voglio si comportino in maniera diversa a quella dettata dal padre. */
+.flex-container.align-self .three{
+    align-self: flex-end;
+}
