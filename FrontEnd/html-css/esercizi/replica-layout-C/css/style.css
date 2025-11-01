@@ -8,18 +8,19 @@
 /*------------------- Stili per mobile -----------------------------*/
 body{
     color:white;
-    background-color: #df1010;
+    background-color: white;
 }
 
 main{
     padding: 1rem;
 }
 
+
 /*------------------------- Stili per tablet ---------------------*/
 
 @media screen and(min-width: 768px){
     body{
-        background-color: #2828af;
+        background-color: white;
     }
     main{
         max-width: 80%;
@@ -46,7 +47,7 @@ body {
 }
 
 img {
-    border-radius: 1rem;
+
     max-width: 100%;
     height: auto;
 }
@@ -62,12 +63,16 @@ header{
     margin-bottom: 2rem;
 }
 
-
+.social{
+    display: flex;
+    justify-content: flex-end;
+    }
 
 .social-icons {
     display: flex;
     position: absolute;
-    right: 3rem; /* allineate a destra rispetto al logo */
+    /* right: 3rem; allineate a destra rispetto al logo */
+    margin: 0 auto;
     
 }
 
@@ -116,10 +121,12 @@ header{
     justify-content: space-evenly;
     align-items: center;
     list-style: none;
-    color: white;
-
+    color: white;    
     width: 100%;
-
+}
+.menu a {
+    text-decoration: none;
+    color: white;
 }
 
 .affianca {
