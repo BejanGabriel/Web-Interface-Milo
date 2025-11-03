@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /*Con questo tag facciamo si che il box model (degli elementi) non sia solo dal contenuto ma comprenda anche il padding e il bordo*/
+}
+
+:root{ /*PSEUDO-CLASSE, si usa per creare variabili*/
+    --primary: #21325e;  /*Variabile 1*/
+    --secondary: #f1d00a;  /*Variabile 2*/
+    --text-color: #323232;
+    --bg-color: white;
+}
+
+.dark-theme{
+    --text-color: white;
+    --bg-color: #323232;
+}
+
+body{
+    font-family: "Open Sans", sans-serif;
+    color: var(--text-color);
+}
+
+h1, h2, h3{
+    margin-bottom: 1.5rem;
+}
+
+p{
+    margin-bottom: 1rem;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    border-radius: .5rem;
+}
+
+.container{
+    padding: 1rem;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.social{
+    display: flex;
+    gap: .5rem;
+}
+
+.social a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 100%;
+    text-decoration: none;
+}
+
+.logo{
+    height: 60px;
+    order: -1;
+}
+
+nav{
+    background-color: var(--primary);
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: .4rem;
+}
+
+nav ul{
+    position: fixed;
+    background-color: white;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+    background-color: var(--primary);
+    transition: all .2s ease-in-out;
+}
+
+nav ul.open{
+    right: 0;
+}
+
+nav .close-btn{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+nav .open-btn,
+nav .close-btn{
+    font-size: 1.25rem;
+    color: var(--bg-color);
+    cursor: pointer;
+}
+
+nav a{
+    color: var(--bg-color);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.intro{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.claim{
+    min-height: 400px;
+    background-image: url(../img/keyboards-1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: .5rem;
+}
+
+.claim .overlay{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: white;
+    width: 100%;
+    min-height: 400px;
+    background-color: rgba(50, 50, 50, .6);
+    border-radius: .5rem;
+}
+
+.card-group{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card-group .card h3{
+    margin-bottom: .5rem;
+}
+
+.card-group .card p{
+    margin-bottom: 0;
+}
+
+.articles{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+footer{
+    background-color: var(--secondary);
+    padding: 1rem;
+    text-align: center;
+}
+
+footer p{
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px){
+
+    nav .open-btn,
+    nav .close-btn{
+        display: none; /*mi fa sparire il bottone menu*/
+    }
+
+    nav ul{
+        position: static;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .card-group{
+        flex-direction: row;
+    }
+
+    .article{
+        display: flex;
+        align-items: center;
+        gap: 1.5em;
+    }
+
+    .article img{
+        width: 50%;
+    }
+
+    .article.inverso img {
+        order: 1;
+    }
+}
+
+@media screen and (min-width: 991px){
+    .container{
+        max-width: 960px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .container{
+        max-width: 1140px;
+    }
+
+    .intro{
+        flex-direction: row;
+    }
+    
+    .card-group{
+        flex-direction: column;
+        width: 30%;
+    }
+
+    .claim{
+        width: 70%;
+    }
+
+    .claim .overlay{
+        height: 100%;
+    }
+
+    header{
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .logo{
+        order: 0;
+        align-self: center;
+        height: 100px;
+    }
+}
