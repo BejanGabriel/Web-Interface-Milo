@@ -1,0 +1,56 @@
+img{
+    width: 100%;
+    height: auto;
+}
+
+.logo{
+    height: 4rem;
+}
+.hero-section img{
+    min-height: 400px;
+    background-image: url(../img/hero.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: .5rem;
+}
+
+.card{
+    border: 0;
+}
+
+.row.card-gallery .card img{
+    height: 10rem;
+    object-fit: contain;
+    
+}
+
+.row.card-gallery .card .card-img-top{
+    align-self: center;
+    background-color: blue;
+    width: 10rem;
+    border-radius: 100%;
+}
+
+.row.card-gallery .card img.card-img-top{
+    margin: 1rem 0;
+}
+
+.titoletto{
+    text-align: center;
+}
+
+.prova{
+
+}
+
+footer {
+    display: flex;
+    background-color: yellow;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+
+
