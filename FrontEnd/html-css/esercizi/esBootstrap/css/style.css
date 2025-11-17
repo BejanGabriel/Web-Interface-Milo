@@ -1,0 +1,33 @@
+.hero {
+    min-height: 50vh;
+    background-image: url(https://picsum.photos/seed/7/1920/1080);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-overlay {
+    min-height: 50vh;
+    background-color: rgba(0, 0, 0 .3)
+}
+
+.activities {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: #dfcece;
+}
+
+.activities img {
+    max-width: 200px;
+    display: block;
+    margin: 0 auto 1.5rem;
+}
+
+.gallery {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.contatti{
+    padding-bottom: 5rem;
+}

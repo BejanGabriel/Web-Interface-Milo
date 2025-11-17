@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Il Girotondo dei Sogni - Asilo Nido</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0; padding: 0;
+    }
+    header, footer {
+      background-color: #e6f0ff;
+      color: #003366;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #cce0ff;
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem 0;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #003366;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 960px;
+      margin: 1rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 2rem;
+      background: white;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #004080;
+    }
+    .btn {
+      background-color: #6699ff;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+    .btn:hover {
+      background-color: #3366cc;
+    }
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Il Girotondo dei Sogni</h1>
+    <p>Asilo Nido nel quartiere Crocetta di Torino</p>
+  </header>
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#chi-siamo">CHI SIAMO</a>
+    <a href="#servizi">I NOSTRI SERVIZI</a>
+    <a href="#struttura">LA STRUTTURA</a>
+    <a href="#novita-eventi">NOVITÀ & EVENTI</a>
+    <a href="#contatti">CONTATTI</a>
+    <a href="#area-genitori">AREA GENITORI</a>
+  </nav>
+  <main>
+    <section id="home">
+      <h2>Benvenuti al Girotondo dei Sogni</h2>
+      <p>Offriamo un ambiente sereno, stimolante e sicuro dove i bambini possono crescere, socializzare e apprendere attraverso il gioco, guidati da personale qualificato e affettuoso.</p>
+      <a href="#struttura" class="btn">La Nostra Struttura</a>
+      <a href="#contatti" class="btn">Contattaci</a>
+      <h3>Ultime News</h3>
+      <p>A breve disponibili aggiornamenti e articoli sugli eventi in asilo.</p>
+      <h3>Galleria</h3>
+      <p>Prossimamente galleria fotografica degli spazi e delle attività.</p>
+    </section>
+
+    <section id="chi-siamo">
+      <h2>Chi Siamo</h2>
+      <p>Il Girotondo dei Sogni nasce nel cuore della Crocetta, a Torino, con una missione chiara: offrire un servizio educativo di qualità per bambini da 0 a 3 anni.</p>
+      <h3>Il nostro Team</h3>
+      <p>Educatrici qualificate e una coordinatrice garantiscono attenzione e cura personalizzata per ogni bambino.</p>
+      <h3>I nostri Valori</h3>
+      <ul>
+        <li>Accoglienza e sicurezza</li>
+        <li>Stimolazione creativa</li>
+        <li>Rispetto e collaborazione</li>
+      </ul>
+    </section>
+
+    <section id="servizi">
+      <h2>I Nostri Servizi</h2>
+      <h3>Attività Quotidiane</h3>
+      <ul>
+        <li>Gioco libero e attività strutturate</li>
+        <li>Laboratori creativi e musica</li>
+        <li>Introduzione alla lingua inglese</li>
+      </ul>
+      <h3>Orari e Calendario</h3>
+      <p>Dal lunedì al venerdì, dalle 7:30 alle 18:30. Calendario scolastico disponibile su richiesta.</p>
+      <h3>Menù Alimentare</h3>
+      <p>Piano settimanale studiato per esigenze alimentari e allergie. Dettagli disponibili previo richiesta.</p>
+    </section>
+
+    <section id="struttura">
+      <h2>La Struttura</h2>
+      <p>Aule luminose e sicure, sala sonno confortevole, spazio pappa attrezzato, bagni igienici e giardino protetto per il gioco all'aperto.</p>
+      <p>Le misure di sicurezza sono rigorosamente rispettate per garantire il benessere dei bambini.</p>
+    </section>
+
+    <section id="novita-eventi">
+      <h2>Novità & Eventi</h2>
+      <p>Informazioni su feste, open day e consigli per i genitori a cura delle educatrici.</p>
+      <p>Controlla regolarmente questa sezione per aggiornamenti e comunicazioni importanti.</p>
+    </section>
+
+    <section id="contatti">
+      <h2>Contatti</h2>
+      <form action="#" method="post">
+        <label for="nome">Nome:</label><br />
+        <input type="text" id="nome" name="nome" required /><br />
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br />
+        <label for="telefono">Telefono:</label><br />
+        <input type="tel" id="telefono" name="telefono" /><br />
+        <label for="messaggio">Messaggio:</label><br />
+        <textarea id="messaggio" name="messaggio" rows="4" required></textarea><br />
+        <button type="submit" class="btn">Invia</button>
+      </form>
+      <h3>Indirizzo</h3>
+      <p>Via Tre Case 18, 10100 Torino</p>
+      <h3>Telefono</h3>
+      <p>011.11111111</p>
+      <h3>Email</h3>
+      <p>info@girotondodeisogni.it</p>
+      <h3>Google Maps</h3>
+      <iframe src="https://maps.google.com/maps?q=Via%20Tre%20Case%2018,%20Torino&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <section id="area-genitori">
+      <h2>Area Genitori (Riservata)</h2>
+      <p>Accesso tramite login per famiglie iscritte.</p>
+      <p>[Sezione protetta con album fotografici privati, comunicazioni riservate e documenti]</p>
+      <p>Contattaci per ricevere le credenziali di accesso.</p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Il Girotondo dei Sogni - Tutti i diritti riservati</p>
+  </footer>
+</body>
+</html>

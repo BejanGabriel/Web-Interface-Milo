@@ -1,141 +1,42 @@
-:root {
-    --bg-color: #e2a120;
-    --nav-color: #1F1F1F;
-    --testo-color: #141414;
-    --button-color: #D9A441;
-    --hover-color: #B88732;
-}
-
-body {
-    background-color: var(--bg-color);
-    color: var(--testo-color);
-}
-
-h1 {
-    color: #221E1A;
-    font-size: 3rem;
-}
-
-h3 {
-    color: #B35425;
-}
-
-h4 {
-    color: #4D3B2F
-}
-
-h5 {
-    color: #6B4F2A;
-}
-
-.btn {
-    background-color: var(--button-color);
-    color: white;
-    border: none;
-}
-
-.btn:hover {
-    background-color: var(--hover-color);
-    color: white;
-}
-
-img {
+img{
     width: 100%;
     height: auto;
-    border-radius: .5rem;
 }
 
-.navbar-nav{
-    gap: 1rem;
-    font-size: larger;
-}
-
-nav {
-    border-radius: 1rem;
-}
-
-.logo {
+.logo{
     height: 4rem;
 }
-
-.hero {
-    position: relative;
+.hero-section img{
     min-height: 400px;
-    color: white;
     background-image: url(../img/hero.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: .5rem;
-    overflow: hidden;
-    /* previene che l'overlay esca dai bordi arrotondati */
 }
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 220, 150, 0.35);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 1rem;
-}
-
-.presentazione.card{
-    padding: .3rem;
-}
-
-.card {
+.card{
     border: 0;
 }
 
-
-
-.row.card-gallery .card{
-    border: 1px solid black;
-}
-
-.row.card-gallery .card img {
+.row.card-gallery .card img{
     height: 10rem;
     object-fit: contain;
-
+    
 }
 
-.row.card-gallery .card .card-img-top {
+.row.card-gallery .card .card-img-top{
     align-self: center;
+    background-color: blue;
     width: 10rem;
     border-radius: 100%;
-    border: 1px solid black;
 }
 
-.row.card-gallery .card img.card-img-top {
+.row.card-gallery .card img.card-img-top{
     margin: 1rem 0;
 }
 
-.gallery {
-    background-image: url(../img/sfondo-gallery.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border: 3px solid rgb(248, 210, 42);
-}
-
-.gallery img{
-    opacity: 0.1;
-
-}
-
-.gallery img:hover {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.titoletto {
+.titoletto{
     text-align: center;
 }
 
@@ -143,12 +44,10 @@ nav {
 footer {
     display: flex;
     background-color: yellow;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    height: 5rem;
+
 }
 
-footer p{
-    padding: 0 1rem;
-    margin-bottom: 0;
-}
+
+
