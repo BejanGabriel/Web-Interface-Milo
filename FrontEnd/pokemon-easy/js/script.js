@@ -25,7 +25,7 @@ const pokemons = [{
     id: 2,
     nome: "Squirtle",
     tipo: "acqua",
-    abilita: "pistolacqua",
+    abilita: "Pistolacqua",
     sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
     spriteSpalle: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/7.png",
     info: "Non è un pompiere"
@@ -33,30 +33,61 @@ const pokemons = [{
     id: 3,
     nome: "Pikachu",
     tipo: "elettrico",
-    abilita: "tuonoshock",
+    abilita: "Tuonoshock",
     sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
     spriteSpalle: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png",
     info: "Coloro i quali lo agganceranno al contatore saranno punibili secondo norma cod. Penale"
 }];
 
 const pokedex = document.querySelector('.pokedex');
+
 function creaCard() {
     pokemons.forEach(pokemon => {
-        const card = `<div class="col-md-6 col-lg-3">
-                    <div class="card">
-                        <img src="${pokemon.sprite}"
-                            class="card-img-top" alt="${pokemon.nome}">
-                        <div class="card-body">
-                            <h5 class="card-title text-capitalize">${pokemon.nome}</h5>
-                            <p class="card-text text-capitalize">
-                            Tipo: ${pokemon.tipo}</p>
-                            Abilità: ${pokemon.abilita}</p>     
-                            <a href="#" class="btn btn-primary">Mostra info</a>
-                        </div>
+        let cardTemplate = `
+            <div class="col-md-6 col-lg-3">
+                <div class="card">
+                    <img src="${pokemon.sprite}" class="card-img-top" alt="${pokemon.nome}">
+                    <div class="card-body">
+                        <h5 class="card-title">${pokemon.nome}</h5>
+                        <p class="card-text text-capitalize">
+                            Tipo: ${pokemon.tipo} <br>
+                            Abilità: ${pokemon.abilita}
+                        </p>
+                        <button class="btn btn-primary" data-id="${pokemon.id}">Mostra info</button>
                     </div>
-                </div>`
-        pokedex.innerHTML += card;
-        
+                </div>
+            </div>`;
+
+        pokedex.innerHTML += cardTemplate;
     });
-}
+};
+
+pokedex.addEventListener('click', e => {
+    if (e.target.tagName === 'BUTTON') {
+        // console.log(e.target.getAttribute('data-id'));
+        // console.log('Sto mostrando le info di', pokemons[e.target.getAttribute('data-id')].nome);
+        // console.log(pokemons[e.target.getAttribute('data-id')].info);
+
+        const infoPoke = document.createElement('p');
+
+        if (e.target.textContent === 'Mostra info') {
+            infoPoke.classList.add('card-text');
+            infoPoke.textContent = pokemons[e.target.getAttribute('data-id')].info;
+            e.target.parentElement.insertBefore(infoPoke, e.target);
+            e.target.textContent = 'Nascondi info';
+            e.target.classList.remove('btn-primary');
+            e.target.classList.add('btn-secondary');
+
+            e.target.parentElement.previousElementSibling.setAttribute('src', pokemons[e.target.getAttribute('data-id')].spriteSpalle);
+        } else {
+            e.target.previousElementSibling.remove();
+            e.target.textContent = 'Mostra info';
+            e.target.classList.remove('btn-secondary');
+            e.target.classList.add('btn-primary');
+
+            e.target.parentElement.previousElementSibling.setAttribute('src', pokemons[e.target.getAttribute('data-id')].sprite);
+        }
+    }
+});
+
 creaCard();
