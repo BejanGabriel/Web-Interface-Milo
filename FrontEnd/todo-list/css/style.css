@@ -1,0 +1,10 @@
+.titolo{
+    font-size: 60px;
+    font-weight: bold;
+}
+
+li svg {
+    width: 25px;
+    height: 25px;
+    overflow: visible;
+}
