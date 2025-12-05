@@ -1,3 +1,24 @@
+:root{
+    --colore-sfondo : #352b5a;
+    --colore-lista : #3c3266;
+    --colore-campi: #282246;
+    --colore-testo: white;
+}
+
+body{
+    background-color: var(--colore-sfondo);
+    color: var(--colore-testo);
+}
+
+.lista{
+    background-color: var(--colore-lista);
+}
+
+/* .form-control{
+    background-color: var(--colore-campi);
+} */
+
+
 .titolo{
     font-size: 60px;
     font-weight: bold;
@@ -6,5 +27,11 @@
 li svg {
     width: 25px;
     height: 25px;
+    fill: white;
     overflow: visible;
+    
+}
+
+.hidden { 
+    display: none !important;
 }

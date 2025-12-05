@@ -2,38 +2,71 @@ const ICONA = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!-
 
 let listaTasks = document.querySelector(".lista");
 let listaElementi = listaTasks.querySelectorAll("li");
-let inputTodo = document.querySelector(".add-form");
+let formAggiunta = document.querySelector(".add-form");
+let formRicerca = document.querySelector(".search-form");
+
+
+console.log(listaElementi);
+console.log(listaTasks);
 
 // Per aggiungere una nuova task al rilevamento del submit (ENTER Key), da implementare con form.
-inputTodo.addEventListener('submit', e => {
-    e.preventDefault()
+formAggiunta.addEventListener('submit', e => {
+    e.preventDefault()  // prevenire il ricaricamento della pagina al submit del form
     const nuovaTask = document.createElement("li");
-    nuovaTask.setAttribute('class', 'p-2 d-flex justify-content-between border');
-    nuovaTask.textContent = `${inputTodo.nuovaTask.value} `; // Usando la dot notation possiamo accedere all'input con name o id 'nuovaTask'
+    nuovaTask.setAttribute('class', 'py-2 d-flex justify-content-between');
+    nuovaTask.textContent = `${formAggiunta.nuovaTask.value} `; // Usando la dot notation possiamo accedere all'input con name o id 'nuovaTask'
     nuovaTask.innerHTML += ICONA;
     listaTasks.append(nuovaTask);
-    inputTodo.reset(); // Pulisce il form dopo l'invio
+    formAggiunta.reset(); // Pulisce il form dopo l'invio
 }
 );
 
 listaTasks.addEventListener("click", e => {
-        e.stopPropagation();
-        console.log(e.target);
+    e.stopPropagation();
+    console.log(e.target);
 
-        if (e.target.tagName === 'svg') {  // A quanto pare gli elementi SVG hanno un tagName diverso, case sensitive, quindi minuscolo
-            e.target.parentElement.remove();
-        }
-        if (e.target.tagName === 'path'){
-            e.target.parentElement.parentElement.remove();
-        }
+    if (e.target.tagName === 'svg') {  // A quanto pare gli elementi SVG hanno un tagName diverso, case sensitive, quindi minuscolo
+        e.target.parentElement.remove();
     }
-
-    );
-
-
-
-
-
+    if (e.target.tagName === 'path') {
+        e.target.parentElement.parentElement.remove();
+    }
+}
+);
 
 
+console.log(listaElementi);
 
+formRicerca.ricerca.addEventListener('keyup', e => {
+    let listaElementi = listaTasks.querySelectorAll("li");
+
+    const termineDiRicerca = e.target.value;
+    console.log("Termine di ricerca:   " + termineDiRicerca);
+
+    listaElementi.forEach(testo => {
+        console.log("Lista su cui viene eseguita la ricerca:   --" + listaElementi);
+        
+        const testoTask = testo.innerText;
+
+
+        console.log("Elemento ricavato dal forEach:   --" + testo);
+
+
+        console.log("TESTO DI -'LI'-  " + testoTask);
+
+        if (testoTask.includes(termineDiRicerca)) {
+            console.log("Il testo  --" + testoTask + "--  include il termine di ricerca  --" + termineDiRicerca + "-- ");
+            console.log(testo.style.display)
+
+            testo.setAttribute('class', 'py-2 d-flex justify-content-between ');
+            // testo.classList.remove("nascosto");
+        } else {
+            console.log("NON INCLUDE NIENTE");
+            console.log(testo.style.display)
+
+            // testo.classList.add("nascosto");
+            testo.style.display = 'none';
+            testo.setAttribute('class', 'py-2');
+        }
+    })
+});
