@@ -14,6 +14,7 @@ formAggiunta.addEventListener('submit', e => {
     e.preventDefault()  // prevenire il ricaricamento della pagina al submit del form
     const nuovaTask = document.createElement("li");
     nuovaTask.setAttribute('class', 'py-2 d-flex justify-content-between');
+    // nuovaTask.setAttribute('style', 'text-transform: capitalize')
     nuovaTask.textContent = `${formAggiunta.nuovaTask.value} `; // Usando la dot notation possiamo accedere all'input con name o id 'nuovaTask'
     nuovaTask.innerHTML += ICONA;
     listaTasks.append(nuovaTask);
@@ -41,16 +42,15 @@ formRicerca.ricerca.addEventListener('keyup', e => {
     let listaElementi = listaTasks.querySelectorAll("li");
 
     const termineDiRicerca = e.target.value;
+
     console.log("Termine di ricerca:   " + termineDiRicerca);
 
     listaElementi.forEach(testo => {
         console.log("Lista su cui viene eseguita la ricerca:   --" + listaElementi);
-        
-        const testoTask = testo.innerText;
 
+        const testoTask = testo.innerText.toLowerCase();
 
         console.log("Elemento ricavato dal forEach:   --" + testo);
-
 
         console.log("TESTO DI -'LI'-  " + testoTask);
 
@@ -59,12 +59,11 @@ formRicerca.ricerca.addEventListener('keyup', e => {
             console.log(testo.style.display)
 
             testo.setAttribute('class', 'py-2 d-flex justify-content-between ');
-            // testo.classList.remove("nascosto");
+
         } else {
             console.log("NON INCLUDE NIENTE");
             console.log(testo.style.display)
 
-            // testo.classList.add("nascosto");
             testo.style.display = 'none';
             testo.setAttribute('class', 'py-2');
         }

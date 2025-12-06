@@ -18,6 +18,11 @@ body{
     background-color: var(--colore-campi);
 } */
 
+.lista li,
+.aggiungi .form-control{
+    text-transform: capitalize;
+}
+
 
 .titolo{
     font-size: 60px;
