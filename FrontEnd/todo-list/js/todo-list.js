@@ -13,9 +13,9 @@ console.log(listaTasks);
 formAggiunta.addEventListener('submit', e => {
     e.preventDefault()  // prevenire il ricaricamento della pagina al submit del form
     const nuovaTask = document.createElement("li");
+    nuovaTask.textContent = `${formAggiunta.nuovaTask.value.trim()} `; // Usando la dot notation possiamo accedere all'input con name o id 'nuovaTask'
     nuovaTask.setAttribute('class', 'py-2 d-flex justify-content-between');
     // nuovaTask.setAttribute('style', 'text-transform: capitalize')
-    nuovaTask.textContent = `${formAggiunta.nuovaTask.value} `; // Usando la dot notation possiamo accedere all'input con name o id 'nuovaTask'
     nuovaTask.innerHTML += ICONA;
     listaTasks.append(nuovaTask);
     formAggiunta.reset(); // Pulisce il form dopo l'invio
@@ -28,6 +28,7 @@ listaTasks.addEventListener("click", e => {
 
     if (e.target.tagName === 'svg') {  // A quanto pare gli elementi SVG hanno un tagName diverso, case sensitive, quindi minuscolo
         e.target.parentElement.remove();
+        
     }
     if (e.target.tagName === 'path') {
         e.target.parentElement.parentElement.remove();
