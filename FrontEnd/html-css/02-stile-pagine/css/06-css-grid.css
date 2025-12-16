@@ -1,0 +1,240 @@
+/* 1) RESET MINIMO E BASE */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.5;
+    background: #f5f7fb;
+    color: #111827;
+}
+
+/* Contenitore centrato per la pagina */
+.container {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+}
+
+/* 2) STILE GENERALE: HEADER, SEZIONI, TIPOGRAFIA */
+.site-header {
+    padding: 3.8rem 0 3rem;
+    background: linear-gradient(135deg, #0ea5e9, #6366f1, #a855f7);
+    color: #f9fafb;
+}
+
+.eyebrow {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: .8rem;
+    opacity: 0.9;
+    margin: 0 0 0.5rem;
+}
+
+h1 {
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
+    line-height: 1.15;
+    margin: 0 0 0.9rem;
+}
+
+.lead {
+    /* ch = character -> largo al massimo quanto 62 caratteri di questo fonts-size */
+    max-width: 62ch;
+    margin: 0;
+    opacity: .95;
+    font-size: 1.1rem;
+}
+
+.section {
+    padding: 3rem 0;
+}
+
+.section-alt {
+    padding: 3rem 0;
+    background: #eef2ff;
+}
+
+h2 {
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    margin: 0 0 1rem;
+}
+
+h3 {
+    font-size: 1.15rem;
+    margin: 0 0 .6rem;
+}
+
+h4 {
+    font-size: 0.05rem;
+    margin: 0 0 0.4rem;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+/* Box note esplicative */
+.note {
+    margin-top: 1.2rem;
+    padding: 1rem 1.1rem;
+    border-radius: 12px;
+    background: #f9fafb;
+    border: 1px solid rgba(148, 163, 184, .6);
+    box-shadow: 0 15px 35px rgba(15, 23, 42, .06);
+}
+
+code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    background: rgba(15, 23, 42, 0.06);
+    padding: .1em .35em;
+    border-radius: .35rem;
+    font-size: .9rem;
+}
+
+/* Caption sotto le demo */
+.caption {
+    font-size: .9rem;
+    color: #6b7280;
+    margin-top: .6rem;
+}
+
+/* Celle generiche per le demo di Grid */
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4f46e5;
+    color: #eef2ff;
+    border-radius: 10px;
+    padding: .4rem .65rem;
+    font-size: .85rem;
+    text-align: center;
+}
+
+/* 3) DEMO: GRID CONTAINER BASE */
+.grid-demo-block {
+    margin-top: 1.3rem;
+}
+
+/* 
+    .grid-basic"
+    - 3 colonne:
+        1) 120px (fissa)
+        2) 1fr (parte di spazio disponibile)
+        3) 120px (fissa)
+
+    fr -> Fractional Unit divide lo spazio rimanente in tot parti
+*/
+.grid-basic {
+    display: grid;
+    grid-template-columns: 120px 1fr 120px;
+    /* altezza di base delle righe per vedere bene la griglia */
+    grid-auto-rows: 70px;
+    gap: 0.5rem;
+
+    background: #e0f2fe;
+    padding: .7rem;
+    border-radius: 14px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* 4) DEMO: UNITÀ (PX, FR, AUTO, MINMAX) */
+.grid-units-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    margin-top: 1.3rem;
+}
+
+.grid-units-block {
+    background: #f9fafb;
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, .6);
+    padding: 1.1rem 1.1rem 1.2rem;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, .06);
+}
+
+/* Container base per le demo delle unità */
+.grid-units {
+    display: grid;
+    gap: .4rem;
+    margin-top: .6rem;
+}
+
+/* fr demo */
+.grid-units-fr {
+    grid-template-columns: 120px 1fr 2fr;
+}
+
+/* auto demo */
+.grid-units-auto {
+    grid-template-columns: auto auto auto;
+}
+
+.long-text {
+    padding-inline: 0.9rem;
+}
+
+/* minmax demo */
+.grid-units-minmax {
+    /*
+        Tre colonne con minimo 120px, massimo 1fr ciascuna.
+        Le colonne possono restirngersi, ma non sotto i 120px
+    */
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
+}
+
+/* 5) DEMO: POSIZIONAMENTO CON LINEE */
+.grid-lines-demo {
+    margin-top: 1.3rem;
+}
+
+/*
+    - griglia con 4 colonne e 3 righe
+*/
+.grid-lines {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: 60px;
+    gap: .4rem;
+
+    background: #e0f2fe;
+    padding: .7rem;
+    border-radius: 14px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Item "header" che prende 3 colonne (1 -> 3) */
+.area-header {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+}
+
+/* Sidebar 2 righe (span 2) nella prima colonna libera */
+.area-sidebar {
+    grid-column: 4 / 5;
+    grid-row: 1 / span 2;
+    background: #0ea5e9;
+}
+
+/* Main che occupa due colonne centrali */
+.area-main {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+    background: #6366f1;
+}
+
+/* Footer che occupa tutte le colonne */
+.area-footer {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    background: #a855f7;
+}

@@ -45,8 +45,8 @@ selettoreRazza.addEventListener('change', () => {
             immagini.forEach(urlImmagine => {
 
                 const colonna = document.createElement('div');
-                colonna.className = 'col-md-4';
-
+                colonna.className = 'col';
+                // aggiungere il controllo sulle sottorazze del cane
                 colonna.innerHTML = `
                     <div class="card h-100 shadow-sm">
                         <img src="${urlImmagine}" class="card-img-top" alt="${razzaSelezionata}">
@@ -65,7 +65,7 @@ selettoreRazza.addEventListener('change', () => {
 
 const recuperaImmaginiRazza = async (razza) => {
 
-    const risposta = await fetch(`${URL_API}/breed/${razza}/images/random/6`);
+    const risposta = await fetch(`${URL_API}/breed/${razza}/images/random/12`);
 
     if (risposta.status !== 200) {
         throw new Error('Errore nel recupero delle immagini');
