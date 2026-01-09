@@ -1,0 +1,28 @@
+
+@use "../abstracts" as *;
+
+/* ------------------------------- SASS LOOPS ------------------------------- */
+/* 
+    I loop in SASS servono a ripetere del codice in modo automatico, invece di scrivere a mano tante classi o variabili simili.
+
+    Perchè usarli?
+    - Generiamo "utilities" (es. .mt-1, mt-2, p-3) partendo da una scala.
+    - Creiamo anche variabili di componenti (es. bedge--success, badge--danger eccc) da una mappa
+    - Riduciamo duplicazioni e manteniamo tutto coerente
+
+    I loop più comuni:
+    - @each  -> per iterare su liste e mappe (il più usato)
+    - @for   -> contatori (da 1 a n)
+    - @while -> casi particolari (raro)
+*/
+
+@each $k, $v in $spacers{
+    .mt-#{$k}{
+        margin-top: $v;
+    }
+
+    .p-#{$k}{
+        padding: $v;
+    }
+}
+

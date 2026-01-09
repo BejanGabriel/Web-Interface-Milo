@@ -1,0 +1,48 @@
+$font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$bg: #0f1115;
+$surface: #161a22;
+$text: #e9ecf1;
+$muted: rgba($text, 0.75);
+
+$primary: #8d3b72;
+$danger: #e5484d;
+$success: #3fb950;
+$warning: #f0b429;
+$info: #3b82f6;
+
+$radius: 1rem;
+
+$container: 1100px;
+
+/* -------------------------------- SASS MAPS ------------------------------- */
+/* 
+    Una map è un insieme di coppie chiave -> valore.
+    Serve per tenere valori correlati in un nico posto (es. breakpoints, spaces, colori) e
+    poi rifiutarli con map.get() oppure generare classi automaticamente con loop @each.
+    Cambiando la mappa una volta, si aggiorna tutto il CSS.
+*/
+
+$breakpoints:(
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+);
+
+$badge-colors:(
+    primary: $primary,
+    success: $success,
+    warning: $warning,
+    danger: $danger,
+    info: $info
+);
+
+$spacers: (
+    0: 0,
+    1: 0.25rem,
+    2: 0.5rem,
+    3: 0.75rem,
+    4: 1rem,
+    5: 1.5rem,
+    6: 2rem
+);

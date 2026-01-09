@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sass Cheatsheet</title>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="container">
+            <div class="brand">
+                <span class="brand__dot"></span>
+                <div>
+                    <h1 class="brand__title">Sass Cheatsheet</h1>
+                    <p class="brand__subtitle">
+                        Progetto per scoprire le basi di SASS: variabili, nesting,
+                        mixins, extend, loop.
+                    </p>
+                </div>
+            </div>
+
+            <nav class="nav">
+                <a class="nav__link" href="#variabili">Variabili</a>
+                <a class="nav__link" href="#nesting">Nesting</a>
+                <a class="nav__link" href="#mixins">Mixins</a>
+                <a class="nav__link" href="#functions">Functions</a>
+                <a class="nav__link" href="#maps">Maps</a>
+                <a class="nav__link" href="#extend">Extend</a>
+                <a class="nav__link" href="#loop">Loop</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container content">
+        <section class="hero card">
+            <div class="card__body">
+                <span class="badge badge--info">Prepros</span>
+                <h2 class="card__title">Come lo usiamo oggi</h2>
+                <p class="card__text">
+                    Compilerà <code>scss/main.scss</code> e ci creerà
+                    <code>css/main.css</code>. Qui sotto esempi e “risultati”
+                    visuali.
+                </p>
+
+                <div class="btn-row">
+                    <a class="btn btn--primary" href="#variabili">Iniziamo</a>
+                    <a class="btn btn--ghost" href="#loop">Vai ai loop</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid">
+            <!-- VARIABILI -->
+            <section id="variabili" class="card">
+                <div class="card__body">
+                    <div class="card__header">
+                        <h3 class="card__title">1) Variabili</h3>
+                        <span class="badge badge--success">Base</span>
+                    </div>
+
+                    <p class="card__text">
+                        In Sass puoi definire colori, spaziature, font… e riusarli ovunque.
+                    </p>
+
+                    <pre class="code"><code>// _variables.scss
+$primary: #8d3b72;
+$radius: 14px;</code></pre>
+
+                    <div class="demo">
+                        <button class="btn btn--primary">Bottone primary</button>
+                        <span class="badge badge--warning">badge--warning</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NESTING -->
+            <section id="nesting" class="card">
+                <div class="card__body">
+                    <div class="card__header">
+                        <h3 class="card__title">2) Nesting</h3>
+                        <span class="badge badge--info">Base</span>
+                    </div>
+
+                    <p class="card__text">
+                        Puoi “annidare” selettori: utile per componenti (senza esagerare).
+                    </p>
+
+                    <pre class="code"><code>.card {
+  &__title { ... }
+  &__text  { ... }
+}</code></pre>
+
+                    <div class="demo">
+                        <div class="mini">
+                            <div class="mini__title">Titolo annidato</div>
+                            <div class="mini__text">Testo annidato (BEM + nesting)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MIXINS -->
+            <section id="mixins" class="card">
+                <div class="card__body">
+                    <div class="card__header">
+                        <h3 class="card__title">3) Mixins</h3>
+                        <span class="badge badge--success">Utilissimo</span>
+                    </div>
+
+                    <p class="card__text">
+                        Un mixin è una “ricetta” riutilizzabile. Qui lo usiamo per
+                        responsive e focus ring.
+                    </p>
+
+                    <pre class="code"><code>@include up(md) { ... }
+@include focus-ring();</code></pre>
+
+                    <div class="demo">
+                        <a class="btn btn--ghost" href="#">Prova tab ↹ su di me</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FUNCTIONS -->
+            <section id="functions" class="card">
+                <div class="card__body">
+                    <div class="card__header">
+                        <h3 class="card__title">4) Functions</h3>
+                        <span class="badge badge--success">Molto utile</span>
+                    </div>
+
+                    <p class="card__text">
+                        Una function Sass restituisce un valore (es. conversioni come px → rem).
+                        È perfetta per calcoli puliti e riutilizzabili.
+                    </p>
+
+                    <pre class="code"><code>// _functions.scss
+@function rem($px, $base: 16) {
+    @return ($px / $base) * 1rem;
+}
+
+// uso:
+.title { font-size: rem(24); } // 1.5rem</code></pre>
+
+                    <div class="demo">
+                        <span class="badge badge--info">rem(24) → 1.5rem</span>
+                        <span class="badge badge--info">rem(100) → 6.25rem</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MAPS -->
+            <section id="maps" class="card">
+                <div class="card__body">
+                    <div class="card__header">
+                        <h3 class="card__title">5) Maps</h3>
+                        <span class="badge badge--info">Design system</span>
+                    </div>
+
+                    <p class="card__text">
+                        Le mappe sono coppie <code>chiave → valore</code>: utili per centralizzare
+                        configurazioni (spaziature, breakpoints, colori) e generare CSS con loop.
+                    </p>
+
+                    <pre class="code"><code>// _variables.scss
+$breakpoints: (sm: 576px, md: 768px, lg: 992px);
+$spacers: (1: .25rem, 2: .5rem, 3: .75rem, 4: 1rem);
+
+// leggere un valore:
+@use "sass:map";
+$md: map.get($breakpoints, md); // 768px
+
+// loop per generare classi:
+@each $k, $v in $spacers {
+    .p-#{$k} { padding: $v; }
+}</code></pre>
+
+                    <div class="demo">
+                        <span class="badge badge--success">map.get()</span>
+                        <span class="badge badge--warning">@each + utilities</span>
+                        <span class="badge badge--danger">config centralizzata</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EXTEND -->
+            <section id="extend" class="card">
+                <div class="card__body">
+                    <div class="card__header">
+                        <h3 class="card__title">4) @extend</h3>
+                        <span class="badge badge--warning">Occhio</span>
+                    </div>
+
+                    <p class="card__text">
+                        <code>@extend</code> riusa uno “scheletro” di stile. È comodo, ma
+                        può complicare il CSS finale se abusato.
+                    </p>
+
+                    <pre class="code"><code>%pill { border-radius: 999px; }
+.badge { @extend %pill; }</code></pre>
+
+                    <div class="demo">
+                        <span class="badge badge--success">Sono una pill</span>
+                        <span class="badge badge--danger">Anch’io</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LOOP -->
+            <section id="loop" class="card">
+                <div class="card__body">
+                    <div class="card__header">
+                        <h3 class="card__title">5) Loop (utilities)</h3>
+                        <span class="badge badge--info">Wow effect</span>
+                    </div>
+
+                    <p class="card__text">
+                        Con un loop generiamo classi tipo <code>.mt-2</code>,
+                        <code>.p-3</code> ecc. Una mini “Bootstrap” fatta in Sass.
+                    </p>
+
+                    <pre class="code"><code>@each $k, $v in $spacers {
+    .mt-#{$k} { margin-top: $v; }
+}</code></pre>
+
+                    <div class="demo">
+                        <div class="stack p-3">
+                            <div class="stack__box">p-3</div>
+                            <div class="stack__box mt-2">mt-2</div>
+                            <div class="stack__box mt-4">mt-4</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <p>
+                Footer SASS Cheatsheet
+            </p>
+        </footer>
+    </main>
+</body>
+</html>

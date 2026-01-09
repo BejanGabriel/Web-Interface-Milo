@@ -1,0 +1,30 @@
+@use "sass:map";
+@use "../abstracts" as *;
+
+%pill{ //verrà estesa
+    border-radius: 999px;
+}
+
+.badge{
+    @extend %pill;
+
+    display: inline-flex;
+    align-items: center;
+    padding: .25rem .55rem;
+    font-size: .85rem;
+    font-weight: 800;
+
+    background: rgba(#fff, 0.06);
+    border: 1px solid rgba(#fff, 0.12);
+
+}
+
+// Generiamo badge colorati da una MAPPA, usando un foreach.
+// creandomi tante classi di badge quante le chiavi della mia mappa.
+@each $name, $color in $badge-colors {
+    .badge--#{name}{
+        background: rgba($color, 0.18);
+        border-color: rgba($color, 0.35);
+        color: rgba($text, 0.95);
+    }
+}

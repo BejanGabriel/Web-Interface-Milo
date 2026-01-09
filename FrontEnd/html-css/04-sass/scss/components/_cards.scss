@@ -1,0 +1,81 @@
+@use "../abstracts" as *;
+
+.card{
+    border-radius: $radius;
+    background: $surface;
+    border: 1px solid rgba(#fff, 0.1);
+    box-shadow: 0 10px 30px rgba(black, 0.25);
+    scroll-margin-top: rem(110);
+
+   &__body{
+    padding: 1.25rem;
+   }
+
+   &__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+    margin-bottom: .5rem;
+   }
+
+   &__title{
+    margin: 0;
+    font-size: 1.1rem;
+   }
+
+   &__text {
+    margin: .5rem 0 0;
+    color: $muted;
+
+    code{
+        color: rgba($text, 0.95);
+    }
+   }
+
+
+}
+
+.hero{
+    .card__title{
+        font-size: 1.35rem;
+    }
+}
+
+.demo{
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    align-items: center;
+}
+
+.mini{
+    padding: .75rem;
+    border-radius: $radius;
+    border: 1px dashed rgba(#fff, 0.18);
+    background: rgba(#000, 0.2);
+
+    &__title{
+        font-weight: 700;
+    }
+
+    &__text{
+        color: $muted;
+        margin-top: .25rem;
+        font-size: .95rem;
+    }
+}
+
+.stack{
+    border-radius: $radius;
+    background: rgba(#000, 0.2);
+    border: 1px solid rgba(#fff, 0.1);
+
+    &__box{
+        padding: .75rem;
+        border-radius: 12px;
+        background: rgba(#fff, 0.06);
+        border: 1px solid rgba(#fff, 0.1);
+    }
+}

@@ -1,0 +1,41 @@
+@use "../abstracts" as *;
+
+:root{
+    color-scheme: dark;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: $font-sans;
+    background: $bg;
+    color: $text;
+    line-height: 1.5;
+}
+
+.container{
+    width: min(100% - 2rem, $container);
+    margin-inline: auto;
+}
+
+.content{
+    padding: 2rem 0 3rem;
+}
+
+.code{
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: $radius;
+    background: rgba(#000, 0.25);
+    border: 1px solid rgba(#fff, 0.08);
+    overflow: auto;
+
+    code{
+        font-size: .5rem;
+        color: rgba($text, 0.9);
+        white-space: 3;
+    }
+    
+}
